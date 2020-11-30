@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Menu } from 'antd';
+import { Link, Switch, Route } from 'react-router-dom';
+import { RocketFilled, GithubFilled, HomeFilled } from '@ant-design/icons';
 import './App.css';
+import Loading from './components/Loading/Loading'
+
+const Home = React.lazy(() => import('./components/Home'));
+const About = React.lazy(() => import('./components/About'));
+const Profile = React.lazy(() => import('./components/Profile'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Menu mode="horizontal" theme="dark">
+        <Menu.Item icon={<HomeFilled />}>
+          <Link to="/">Home</Link>
+        </Menu.Item>
+        <Menu.Item icon={<RocketFilled />}>
+          <Link to="/about">About</Link>
+        </Menu.Item>
+        <Menu.Item icon={<GithubFilled />}>
+          <Link to="/profile">Code</Link>
+        </Menu.Item>
+      </Menu>
+
+      <React.Suspense fallback={<Loading />}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/profile" component={Profile} />
+        </Switch>
+      </React.Suspense>
+    </>
   );
 }
 
