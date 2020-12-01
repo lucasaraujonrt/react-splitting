@@ -40,7 +40,7 @@ class Home extends React.Component {
         <div className="container">
           <h1 className="title">Olá sou o <strong>Lucas Araujo</strong> e criei essa página para aplicar conceitos de <strong>React.Suspense</strong> e <strong>Redux</strong></h1>
           <div className="container-form">
-            <h3 className="container-form-title">Todos dos dados inseridos nesse form serão armazenado na Store do redux, onde pode ser mostrada em toda aplicação.</h3>
+            <h3 className="container-form-title">Todos os dados inseridos nesse form serão armazenado na Store do redux, onde pode ser mostrada em toda aplicação.</h3>
             <form className="form" onSubmit={(e) => this.onSubmit(e)}>
               <Row gutter={16} className="form-row">
                 <Col span={8}>

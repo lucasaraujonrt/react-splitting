@@ -20,7 +20,7 @@ function App() {
           <Link to="/about">About</Link>
         </Menu.Item>
         <Menu.Item icon={<GithubFilled />}>
-          <Link to="/profile">Code</Link>
+          <Link to="/profile">Me</Link>
         </Menu.Item>
       </Menu>
 
