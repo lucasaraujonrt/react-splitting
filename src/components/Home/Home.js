@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Row, Col, Input, Button, message } from 'antd';
+import Fade from 'react-reveal/Fade';
 import { HomeActions } from '../../redux/actions';
 import { HomeSelectors } from '../../redux/reducers'
-import { Row, Col, Input, Button, message } from 'antd';
 import './Home.css'
 
 class Home extends React.Component {
@@ -37,10 +38,15 @@ class Home extends React.Component {
     const { data } = this.props;
     return (
       <>
+
         <div className="container">
-          <h1 className="title">Olá sou o <strong>Lucas Araujo</strong> e criei essa página para aplicar conceitos de <strong>React.Suspense</strong> e <strong>Redux</strong></h1>
+          <Fade left >
+            <h1 className="title">Olá sou o <strong>Lucas Araujo</strong> e criei essa página para aplicar conceitos de <strong>React.Suspense</strong> e <strong>Redux</strong></h1>
+          </Fade>
           <div className="container-form">
-            <h3 className="container-form-title">Todos os dados inseridos nesse form serão armazenado na Store do redux, onde pode ser mostrada em toda aplicação.</h3>
+            <Fade left>
+              <h3 className="container-form-title">Todos os dados inseridos nesse form serão armazenado na Store do redux, onde pode ser mostrada em toda aplicação.</h3>
+            </Fade>
             <form className="form" onSubmit={(e) => this.onSubmit(e)}>
               <Row gutter={16} className="form-row">
                 <Col span={8}>

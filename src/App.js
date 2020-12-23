@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu } from 'antd';
 import { Link, Switch, Route } from 'react-router-dom';
 import { RocketFilled, GithubFilled, HomeFilled } from '@ant-design/icons';
+import Rotate from 'react-reveal/Rotate';
 import './App.css';
 import Loading from './components/Loading/Loading'
 
@@ -12,17 +13,19 @@ const Profile = React.lazy(() => import('./components/Profile'));
 function App() {
   return (
     <>
-      <Menu mode="horizontal" theme="dark">
-        <Menu.Item icon={<HomeFilled />}>
-          <Link to="/">Home</Link>
-        </Menu.Item>
-        <Menu.Item icon={<RocketFilled />}>
-          <Link to="/about">About</Link>
-        </Menu.Item>
-        <Menu.Item icon={<GithubFilled />}>
-          <Link to="/profile">Me</Link>
-        </Menu.Item>
-      </Menu>
+      <Rotate top left>
+        <Menu mode="horizontal" theme="dark">
+          <Menu.Item icon={<HomeFilled />}>
+            <Link to="/">Home</Link>
+          </Menu.Item>
+          <Menu.Item icon={<RocketFilled />}>
+            <Link to="/about">About</Link>
+          </Menu.Item>
+          <Menu.Item icon={<GithubFilled />}>
+            <Link to="/profile">Me</Link>
+          </Menu.Item>
+        </Menu>
+      </Rotate>
 
       <React.Suspense fallback={<Loading />}>
         <Switch>
